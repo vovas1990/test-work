@@ -16,7 +16,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     restart: always #если контаинер упадет то он будет перезапущен ОТКАЗОУСТОЙЧИВОСТЬ
-    container_name: grafff
+    container_name: grafana_my
     networks:
     - myNetwork
     ports:
