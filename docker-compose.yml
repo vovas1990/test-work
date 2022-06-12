@@ -7,13 +7,25 @@ services:
     ports:
     - 9090:9090
     networks:
-      - my_network
+    - myNetwork
     volumes:
     - prometheus:/etc/prometheus
+
+  grafana:
+    build:  #позволяет собрать билд
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always #если контаинер упадет то он будет перезапущен ОТКАЗОУСТОЙЧИВОСТЬ
+    container_name: grafff
+    networks:
+    - myNetwork
+    ports:
+    - 3000:3000
+
 volumes:
   prometheus:
     external: true
 
 networks:
-  my_network:
+  myNetwork:
     driver: bridge
