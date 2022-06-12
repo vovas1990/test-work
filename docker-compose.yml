@@ -12,15 +12,11 @@ services:
     - prometheus:/etc/prometheus
 
   grafana:
-    build:  #позволяет собрать билд
-      context: .
-      dockerfile: ./Dockerfile
+    image: ghcr.io/vovas1990/test-work/test-work_grafana:v1
     restart: always #если контаинер упадет то он будет перезапущен ОТКАЗОУСТОЙЧИВОСТЬ
     container_name: grafana_my
     networks:
     - myNetwork
-    ports:
-    - 3000:3000
 
 volumes:
   prometheus:
