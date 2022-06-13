@@ -12,7 +12,7 @@ services:
     - prometheus:/etc/prometheus
 
   grafana:
-    image: ghcr.io/vovas1990/test-work/test-work_grafana:v1
+    image: ghcr.io/vovas1990/test-work/test-work_grafana:v2
     restart: always #если контаинер упадет то он будет перезапущен ОТКАЗОУСТОЙЧИВОСТЬ
     container_name: grafana_my
     ports:
